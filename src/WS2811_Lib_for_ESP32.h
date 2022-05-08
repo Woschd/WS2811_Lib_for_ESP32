@@ -11,7 +11,6 @@
 #ifndef _WS2811_LIB_FOR_ESP32_h
 #define _WS2811_LIB_FOR_ESP32_h
 
-// !! muss das extra eingebunden werden, oder macht das Arduino direkt?
 #if defined(ARDUINO) && ARDUINO >= 100
 #include <Arduino.h>
 #endif
@@ -60,36 +59,25 @@ public:
 	void setBrightness(uint8_t brightness);	//brightness 0-255
 
 	
-
-	// schreibt den Wert eines einzelnen Pixels
 	esp_err_t set_pixel(int index, uint8_t x);								
 	
-	// schreibt den LED Wert mit 3 Pixeln in den Speicher, Ausgabe mit show()
 	esp_err_t set_rgb(int index, uint8_t r, uint8_t g, uint8_t b);			
 	
-
-	// schreibt den LED Wert mit 4 Pixeln in den Speicher, Ausgabe mit show()
 	esp_err_t set_rgbw(int index, uint8_t r, uint8_t g, uint8_t b, uint8_t w );
 	
-	
-	// schreibt den vordefinierten LED Wert aus Array mit 3 Pixeln und Helligkeit in den Speicher, Ausgabe mit show()
 	esp_err_t set_led3(int index, uint8_t col[], uint8_t pwr);
 
-	
-	// schreibt den vordefinierten LED Wert aus Array mit 3 Pixeln und Helligkeit in den Speicher, Ausgabe mit show()
 	esp_err_t set_led4(int index, uint8_t col[], uint8_t pwr);
+		
+	esp_err_t setLedColorData(int index, uint32_t rgb);	
 	
-	
-	esp_err_t setLedColorData(int index, uint32_t rgb);					
 	esp_err_t setLedColorData(int index, uint8_t r, uint8_t g, uint8_t b);	
 
+	esp_err_t setAllLedsColorData(uint32_t rgb);	
 	
-	// ruft setLedColorData auf
-	esp_err_t setAllLedsColorData(uint32_t rgb);						
 	esp_err_t setAllLedsColorData(uint8_t r, uint8_t g, uint8_t b);			
 
 
-	// alle LEDs ausschalten
 	esp_err_t off();
 	
 	esp_err_t show();														
