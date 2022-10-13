@@ -2,7 +2,7 @@
 
 ## Beschreibung
 
-Diese library stammt ursprünglich von https://github.com/Freenove/Freenove_WS2812_Lib_for_ESP32.
+Diese Library stammt ursprünglich von https://github.com/Freenove/Freenove_WS2812_Lib_for_ESP32.
 
 Sie wurde verändert um in einem Bus seriell ansteuerbare RGB und RGBW Leds gemischt mit WS2811 als Portexpander ansteuern zu können.
 
